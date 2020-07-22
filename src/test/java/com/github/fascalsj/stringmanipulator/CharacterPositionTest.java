@@ -1,8 +1,7 @@
-package com.github.stringmanipulation;
+package com.github.fascalsj.stringmanipulator;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 

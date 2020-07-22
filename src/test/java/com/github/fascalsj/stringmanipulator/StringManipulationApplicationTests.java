@@ -1,4 +1,4 @@
-package com.github.stringmanipulation;
+package com.github.fascalsj.stringmanipulator;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
