@@ -8,13 +8,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Component
-class CharacterPosition {
+public class CharacterPosition {
 
-    public Integer getSingleCharacterPosition(String fullCharacter, String textForFinding) {
+    public static Integer getSingleCharacterPosition(String fullCharacter, String textForFinding) {
         return fullCharacter.indexOf(textForFinding);
     }
 
-    public List<Integer> getMultipleCharacterPosition(String fullCharacter, String textForFinding) {
+    public static List<Integer> getMultipleCharacterPosition(String fullCharacter, String textForFinding) {
+
+
         List<Integer> positions = new LinkedList<>();
         int position = fullCharacter.indexOf(textForFinding, 0);
 
@@ -31,5 +33,6 @@ class CharacterPosition {
             positions.add(matcher.start());
         }
         return positions;
+
     }
 }
