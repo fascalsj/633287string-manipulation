@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.github.fascalsj</groupId>
     <artifactId>string-manipulator</artifactId>
-    <version>0.0.1.0</version>
+    <version>1.0.1</version>
     <name>string-manipulator</name>
     <description>Library for string manipulator</description>
 
@@ -46,16 +46,36 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+
     </dependencies>
 
     <build>
         <defaultGoal>install</defaultGoal>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <checkModificationExcludes>
+                        <checkModificationExclude>target/deploy/**</checkModificationExclude>
+                        <checkModificationExclude>pom.xml</checkModificationExclude>
+                    </checkModificationExcludes>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>perform</goal>
+                        </goals>
+                        <configuration>
+                            <pomFileName>${basedir}/pom.xml</pomFileName>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
-
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -108,7 +128,6 @@
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
